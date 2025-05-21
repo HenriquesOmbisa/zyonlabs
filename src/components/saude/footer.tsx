@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} SaúdePlus. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} ZyonLabs. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

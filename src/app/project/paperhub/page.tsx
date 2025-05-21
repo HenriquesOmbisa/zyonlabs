@@ -14,6 +14,7 @@ import { Separator } from '@/components/ui/separator';
 // Icons (Lucide)
 import { ShoppingCart, Search, Star, ChevronRight, ChevronLeft, Menu, X, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { formatPrice } from '@/utils/utils'
 
 // Types
 type Product = {
@@ -45,7 +46,7 @@ const featuredProducts: Product[] = [
   {
     id: 1,
     name: "Caderno Premium 200 folhas",
-    price: 34.90,
+    price: 3490,
     image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Cadernos",
     rating: 4.7,
@@ -55,7 +56,7 @@ const featuredProducts: Product[] = [
   {
     id: 2,
     name: "Caneta Técnica 0.5mm",
-    price: 12.90,
+    price: 290,
     image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Canetas",
     rating: 4.5,
@@ -65,7 +66,7 @@ const featuredProducts: Product[] = [
   {
     id: 3,
     name: "Mochila Antirroubo 15.6”",
-    price: 199.90,
+    price: 9990,
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Mochilas",
     rating: 4.8,
@@ -74,7 +75,7 @@ const featuredProducts: Product[] = [
   {
     id: 4,
     name: "Kit Organizador de Mesa",
-    price: 59.90,
+    price: 5990,
     image: "https://images.unsplash.com/photo-1608500218807-37025970ac1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Organizadores",
     rating: 4.3,
@@ -83,7 +84,7 @@ const featuredProducts: Product[] = [
   {
     id: 5,
     name: "Post-it Colorido 10x10cm",
-    price: 14.90,
+    price: 490,
     image: "https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Papelaria",
     rating: 4.2,
@@ -92,7 +93,7 @@ const featuredProducts: Product[] = [
   {
     id: 6,
     name: "Estojo Executivo",
-    price: 45.90,
+    price: 590,
     image: "https://images.unsplash.com/photo-1584977900111-6df8c2f8bbb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "Organizadores",
     rating: 4.0,
@@ -315,7 +316,7 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <Button className="w-full mt-6" onClick={()=> router.push("/project/e-commerce/checkout")}>
+                      <Button className="w-full mt-6" onClick={()=> router.push("/project/paperhub/checkout")}>
                         Finalizar Compra
                       </Button>
                     </>
@@ -527,7 +528,7 @@ export default function Home() {
                   </CardContent>
                   <CardFooter className="flex justify-between items-center">
                     <span className="text-lg font-bold text-blue-600">
-                      R$ {product.price.toFixed(2).replace('.', ',')}
+                      {formatPrice(product.price)}
                     </span>
                     <Button 
                       size="sm"
@@ -670,14 +671,14 @@ export default function Home() {
               ))}
             </div>
             <p className="text-slate-400 mt-6">
-              contato@paperhub.com.br
+              contato@paperhub.co.ao
               <br />
-              (11) 98765-4321
+              (+244) 987-665-4321
             </p>
           </div>
         </div>
         <div className="container mx-auto px-4 pt-8 mt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-          © {new Date().getFullYear()} PaperHub. Todos os direitos reservados.
+          © {new Date().getFullYear()} ZyonLabs. Todos os direitos reservados.
         </div>
       </footer>
     </div>

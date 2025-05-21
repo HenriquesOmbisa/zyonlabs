@@ -34,7 +34,7 @@ export default function Contact() {
                 <h3 className="text-lg font-medium">Endereço</h3>
                 <p className="text-muted-foreground">
                   Rua Saúde, 123 - Centro<br />
-                  São Paulo/SP - CEP: 01000-000
+                  Luanda-Cazenga
                 </p>
               </div>
             </div>
@@ -44,8 +44,8 @@ export default function Contact() {
               <div>
                 <h3 className="text-lg font-medium">Telefone</h3>
                 <p className="text-muted-foreground">
-                  (11) 1234-5678<br />
-                  (11) 98765-4321 (WhatsApp)
+                  (+244) 987-665-4321<br />
+                  (+244) 987-665-4321 (WhatsApp)
                 </p>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function Contact() {
               <Mail className="mt-1 h-5 w-5 text-primary" />
               <div>
                 <h3 className="text-lg font-medium">Email</h3>
-                <p className="text-muted-foreground">contato@saudeplus.com.br</p>
+                <p className="text-muted-foreground">contato@saudeplus.co.ao</p>
               </div>
             </div>
 

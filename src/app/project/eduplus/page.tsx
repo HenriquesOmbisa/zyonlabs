@@ -8,6 +8,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Separator } from '@/components/ui/separator';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
+import { formatPrice } from '@/utils/utils';
 
 // Tipos
 type Course = {
@@ -40,7 +41,7 @@ const courses: Course[] = [
     category: "Desenvolvimento",
     rating: 4.9,
     students: 1245,
-    price: 299.90,
+    price: 4500,
     duration: "32 horas",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
   },
@@ -234,7 +235,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filteredCourses.map(course => (
               <motion.div
@@ -254,7 +255,7 @@ export default function Home() {
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <CardTitle className="text-lg">{course.title}</CardTitle>
-                      <span className="font-bold text-blue-600">R$ {course.price.toFixed(2)}</span>
+                      <span className="font-bold text-blue-600"> {formatPrice(course.price)}</span>
                     </div>
                     <CardDescription className="text-slate-600">{course.instructor}</CardDescription>
                   </CardHeader>
@@ -563,7 +564,7 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} EduPlus. Todos os direitos reservados.
+              © {new Date().getFullYear()} ZyonLabs. Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
               <Button variant="outline" size="icon" className="border-slate-700 text-slate-300 hover:bg-slate-800">

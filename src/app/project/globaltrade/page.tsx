@@ -644,8 +644,8 @@ export default function Home() {
               <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-100 text-lg px-8 py-6 shadow-lg">
                 Solicitar Demonstração <ArrowRight className="ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-8 py-6">
-                <Phone className="mr-2 h-5 w-5" /> (21) 1234-5678
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white text-foreground text-lg px-8 py-6">
+                <Phone className="mr-2 h-5 w-5" /> (+244) 987-665-4321
               </Button>
             </motion.div>
           </motion.div>
@@ -674,7 +674,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Telefone</h4>
-                    <p className="text-gray-600">(21) 1234-5678</p>
+                    <p className="text-gray-600">(+244) 987-665-4321</p>
                   </div>
                 </div>
                 
@@ -684,7 +684,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">E-mail</h4>
-                    <p className="text-gray-600">contato@globaltrade.com.br</p>
+                    <p className="text-gray-600">contato@globaltrade.co.ao</p>
                   </div>
                 </div>
                 
@@ -694,7 +694,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Endereço</h4>
-                    <p className="text-gray-600">Av. das Nações, 1234 - Sala 1501<br />Rio de Janeiro, RJ - Brasil</p>
+                    <p className="text-gray-600">Av. das N'gola Kiluanje, 1234 - Sala 1501<br />Luanda, Angola</p>
                   </div>
                 </div>
               </div>
@@ -873,7 +873,7 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} GlobalTrade. Todos os direitos reservados.
+              © {new Date().getFullYear()} ZyonLabs. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm">Termos de Serviço</a>

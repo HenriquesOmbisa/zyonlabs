@@ -62,9 +62,9 @@ export default function Appointment() {
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm font-medium">
                       <User className="h-4 w-4" />
-                      CPF
+                      BI
                     </label>
-                    <Input placeholder="000.000.000-00" required />
+                    <Input placeholder="00xxxxxxxLAxxx" required />
                   </div>
                 </div>
 

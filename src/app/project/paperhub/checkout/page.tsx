@@ -18,7 +18,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
 // Icons (Lucide)
-import { ShoppingCart, Search, Menu, X, Instagram, Twitter, Facebook, CreditCard, Barcode, QrCode, NotebookText } from "lucide-react";
+import { ShoppingCart, Search, Menu, X, Instagram, Twitter, Facebook, CreditCard, Barcode, Banknote, NotebookText } from "lucide-react";
+import { formatPrice } from '@/utils/utils'
 
 // Tipos
 type Product = {
@@ -73,7 +74,7 @@ export default function CheckoutPage() {
     {
       id: 1,
       name: "Caderno Premium 200 folhas",
-      price: 34.90,
+      price: 3490,
       image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       category: "Cadernos",
       rating: 4.7,
@@ -84,7 +85,7 @@ export default function CheckoutPage() {
     {
       id: 2,
       name: "Caneta Técnica 0.5mm",
-      price: 12.90,
+      price: 1290,
       image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       category: "Canetas",
       rating: 4.5,
@@ -320,10 +321,10 @@ export default function CheckoutPage() {
 
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2 col-span-1">
-                    <Label htmlFor="cep">CEP</Label>
+                    <Label htmlFor="cep">BI</Label>
                     <Input
                       id="cep"
-                      placeholder="00000-000"
+                      placeholder="00xxxxxxxLAxxx"
                       {...register("cep")}
                     />
                     {errors.cep && <p className="text-red-500 text-sm">{errors.cep.message}</p>}
@@ -344,7 +345,7 @@ export default function CheckoutPage() {
                     <Label htmlFor="numero">Número</Label>
                     <Input
                       id="numero"
-                      placeholder="123"
+                      placeholder="xxx-xxx-xxx"
                       {...register("numero")}
                     />
                     {errors.numero && <p className="text-red-500 text-sm">{errors.numero.message}</p>}
@@ -368,16 +369,6 @@ export default function CheckoutPage() {
                       {...register("cidade")}
                     />
                     {errors.cidade && <p className="text-red-500 text-sm">{errors.cidade.message}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="estado">Estado (UF)</Label>
-                    <Input
-                      id="estado"
-                      placeholder="SP"
-                      maxLength={2}
-                      {...register("estado")}
-                    />
-                    {errors.estado && <p className="text-red-500 text-sm">{errors.estado.message}</p>}
                   </div>
                 </div>
 
@@ -403,8 +394,8 @@ export default function CheckoutPage() {
                         htmlFor="pix"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-slate-200 bg-white p-4 hover:bg-slate-50 hover:text-slate-900 peer-data-[state=checked]:border-blue-600"
                       >
-                        <QrCode className="h-6 w-6 mb-2" />
-                        <span>PIX</span>
+                        <Banknote className="h-6 w-6 mb-2" />
+                        <span>Em mão</span>
                       </Label>
                     </div>
                     <div>
@@ -414,7 +405,7 @@ export default function CheckoutPage() {
                         className="flex flex-col items-center justify-between rounded-md border-2 border-slate-200 bg-white p-4 hover:bg-slate-50 hover:text-slate-900 peer-data-[state=checked]:border-blue-600"
                       >
                         <Barcode className="h-6 w-6 mb-2" />
-                        <span>Boleto</span>
+                        <span>Depósito</span>
                       </Label>
                     </div>
                   </RadioGroup>
@@ -448,11 +439,11 @@ export default function CheckoutPage() {
                     <div className="flex-grow">
                       <h4 className="font-medium">{item.name}</h4>
                       <p className="text-sm text-slate-600">
-                        {item.quantity} x R$ {item.price.toFixed(2)}
+                        {item.quantity} x {formatPrice(item.price)}
                       </p>
                     </div>
                     <div className="font-medium">
-                      R$ {(item.price * item.quantity).toFixed(2)}
+                       {formatPrice(item.price * item.quantity)}
                     </div>
                   </div>
                 ))}
@@ -462,15 +453,15 @@ export default function CheckoutPage() {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>Subtotal:</span>
-                    <span>R$ {subtotal.toFixed(2)}</span>
+                    <span>R$ {formatPrice(subtotal)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Frete:</span>
-                    <span>{frete === 0 ? "Grátis" : `R$ ${frete.toFixed(2)}`}</span>
+                    <span>{frete === 0 ? "Grátis" : `R$ ${formatPrice(frete)}`}</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg pt-2">
                     <span>Total:</span>
-                    <span>R$ {total.toFixed(2)}</span>
+                    <span>R$ {formatPrice(total)}</span>
                   </div>
                 </div>
               </div>
@@ -529,14 +520,14 @@ export default function CheckoutPage() {
               ))}
             </div>
             <p className="text-slate-400 mt-6">
-              contato@paperhub.com.br
+              contato@paperhub.co.ao
               <br />
-              (11) 98765-4321
+              (+244) 987-665-4321
             </p>
           </div>
         </div>
         <div className="container mx-auto px-4 pt-8 mt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-          © {new Date().getFullYear()} PaperHub. Todos os direitos reservados.
+          © {new Date().getFullYear()} Zyonlabs. Todos os direitos reservados.
         </div>
       </footer>
     </div>

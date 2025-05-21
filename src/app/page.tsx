@@ -48,23 +48,32 @@ export default function HomePage() {
     
     const total = cart.reduce((sum, item) => sum + item.price, 0);
     const servicesText = cart.map(item => 
-      `🛠️ *${item.name}*%0A   - Preço: $${item.price}%0A   - Descrição: ${item.description}`
-    ).join('%0A%0A');
+      `🛠️ *${item.name}*\n   - Preço: $${item.price}\n   - Descrição: ${item.description}`
+    ).join('\n\n');
 
     if (activeTab === 'whatsapp') {
-      const message = `📋 *NOVO PEDIDO ZYONLABS*%0A%0A` +
-        `👤 *Cliente:* ${formData.name}%0A` +
-        `📧 *Email:* ${formData.email}%0A` +
-        `📱 *Telefone:* ${formData.phone}%0A%0A` +
-        `💬 *Mensagem:* ${formData.message}%0A%0A` +
-        `🛒 *Serviços:*%0A%0A${servicesText}%0A%0A` +
+      const message = 
+        `📋 *NOVO PEDIDO ZYONLABS*\n\n` +
+        `👤 *Cliente:* ${formData.name}\n` +
+        `📧 *Email:* ${formData.email}\n` +
+        `📱 *Telefone:* ${formData.phone}\n\n` +
+        `💬 *Mensagem:* ${formData.message}\n\n` +
+        `🛒 *Serviços:*\n\n${servicesText}\n\n` +
         `💵 *Total:* $${total}`;
       
       window.open(`https://wa.me/244949221682?text=${encodeURIComponent(message)}`, '_blank');
-    } else {
+    }else {
       const subject = `Novo pedido de ${formData.name}`;
-      const body = `Detalhes do pedido:%0A%0A${servicesText.replace(/%0A/g, '\n')}`;
-      window.open(`mailto:contato@zyonlabs.com?subject=${subject}&body=${body}`);
+      const body = 
+        `📋 *NOVO PEDIDO ZYONLABS*\n\n` +
+        `👤 Cliente: ${formData.name}\n` +
+        `📧 Email: ${formData.email}\n` +
+        `📱 Telefone: ${formData.phone}\n\n` +
+        `💬 Mensagem: ${formData.message}\n\n` +
+        `🛒 Serviços:\n\n${servicesText}\n\n` +
+        `💵 Total: $${total}`;
+
+      window.open(`mailto:henriquesombisa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
     }
 
     setOrderSent(true);
@@ -181,7 +190,7 @@ export default function HomePage() {
                 to="servicos"
                 smooth={true}
                 duration={500}
-                className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-md font-bold transition-colors flex items-center gap-2 transition duration-300 ease-in-out hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)]"
+                className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-md font-bold transition-colors flex cursor-pointer items-center gap-2 transition duration-300 ease-in-out hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)]"
               >
                 Nossos Serviços <ChevronRight size={18} />
               </ScrollLink>
@@ -334,7 +343,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="text-gray-400">Email</div>
-                  <div className="font-medium">contato@zyonlabs.com</div>
+                  <div className="font-medium">henriques@gmail.com</div>
                 </div>
               </div>
               
