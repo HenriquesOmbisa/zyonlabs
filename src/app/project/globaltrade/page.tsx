@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { Globe, Ship, PackageCheck, Clock, ShieldCheck, ArrowRight, Phone, Mail, MapPin, BarChart2, Users, FileText, CheckCircle, ChevronDown } from 'lucide-react';
+import { Globe, Ship, PackageCheck, ShieldCheck, ArrowRight, Phone, Mail, MapPin, BarChart2, Users, FileText, CheckCircle, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,7 +11,6 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
@@ -92,10 +91,7 @@ export default function Home() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
   };
 
-  const scaleUp = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
-  };
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -888,6 +884,7 @@ export default function Home() {
 }
 
 // Componente de Card de Serviço reutilizável
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function ServiceCard({ service }: { service: { icon: React.ComponentType<any>, title: string, description: string, features?: string[] } }) {
   return (
     <Card className="h-full hover:shadow-lg transition-shadow group">
