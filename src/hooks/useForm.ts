@@ -1,5 +1,5 @@
 import useCart from '@/store/useCart';
-import { formatPrice } from '@/utils';
+import { discountedPrice, formatPrice } from '@/utils';
 import { useState } from 'react';
 
 export default function useForm() {
@@ -42,7 +42,7 @@ export default function useForm() {
     
     const total = items.reduce((sum, item) => sum + item.price, 0);
     const servicesText = items.map(item => 
-      `🛠️ *${item.name}*\n   - Preço: $${formatPrice(item.price)}\n   - Descrição: ${item.description}`
+      `🛠️ *${item.name}*\n   - Preço: $${formatPrice(discountedPrice(item.price))}\n   - Descrição: ${item.description}`
     ).join('\n\n');
 
     if (activeTab === 'whatsapp') {
