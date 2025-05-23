@@ -8,7 +8,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Separator } from '@/components/ui/separator';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
-import { formatPrice } from '@/utils/utils';
+import { formatPrice } from '@/utils';
 
 // Tipos
 type Course = {

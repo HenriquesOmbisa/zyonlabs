@@ -1,7 +1,6 @@
 import { 
   Wallet, ArrowUp, ArrowDown, TrendingUp, Plus, Download, 
-  CreditCard, BarChart2, PieChart, DollarSign, Settings, 
-  User, Bell, Home, FileText, HelpCircle, Facebook, 
+  CreditCard, BarChart2, PieChart, DollarSign, Facebook, 
   Twitter, Instagram, Linkedin, Play, Apple, Star, 
   Check, X, ChevronRight, Smartphone, Shield, Percent,
   Globe, Briefcase, Headphones, Clock, Gift

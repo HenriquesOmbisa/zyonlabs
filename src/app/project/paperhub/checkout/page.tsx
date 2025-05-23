@@ -19,7 +19,7 @@ import { Label } from "@/components/ui/label";
 
 // Icons (Lucide)
 import { ShoppingCart, Search, Menu, X, Instagram, Twitter, Facebook, CreditCard, Barcode, Banknote, NotebookText } from "lucide-react";
-import { formatPrice } from '@/utils/utils'
+import { formatPrice } from '@/utils'
 
 // Tipos
 type Product = {

@@ -21,6 +21,7 @@ export function InfiniteMovingCards({
   items,
   direction = 'left',
   speed = 'normal',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   pauseOnHover = true,
   className,
 }: InfiniteMovingCardsProps) {

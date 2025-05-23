@@ -14,7 +14,7 @@ import { Separator } from '@/components/ui/separator';
 // Icons (Lucide)
 import { ShoppingCart, Search, Star, ChevronRight, ChevronLeft, Menu, X, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { formatPrice } from '@/utils/utils'
+import { formatPrice } from '@/utils'
 
 // Types
 type Product = {

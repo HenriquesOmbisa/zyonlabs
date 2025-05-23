@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 
 interface Testimonial {
@@ -12,7 +12,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <Card className="h-full hover:shadow-lg transition-shadow">
       <CardContent className="p-6">
-        <p className="text-lg text-gray-600 italic mb-6">"{testimonial.content}"</p>
+        <p className="text-lg text-gray-600 italic mb-6">&quot;{testimonial.content}&quot;</p>
         <div className="flex items-center gap-4">
           <div className="relative h-12 w-12 rounded-full overflow-hidden">
             <Image

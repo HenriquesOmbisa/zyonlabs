@@ -46,8 +46,7 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
+    toast( "Mensagem enviada!",{
       description: "Obrigado pelo seu contato. Nossa equipe responderá em breve.",
     });
     setFormData({
@@ -349,7 +348,7 @@ export default function Home() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
           >
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <motion.div
                 key={stat.value}
                 variants={fadeInUp}
@@ -690,7 +689,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Endereço</h4>
-                    <p className="text-gray-600">Av. das N'gola Kiluanje, 1234 - Sala 1501<br />Luanda, Angola</p>
+                    <p className="text-gray-600">Av. das N&apos;gola Kiluanje, 1234 - Sala 1501<br />Luanda, Angola</p>
                   </div>
                 </div>
               </div>

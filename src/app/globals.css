@@ -2,8 +2,15 @@
 @import "tw-animate-css";
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Variable.woff') format('woff2');
+  font-family: 'Geist';
+  src: url('/fonts/Geist.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand.woff2') format('woff2');
+  font-weight: normal;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -120,8 +127,11 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: Geist, sans-serif;
   }
   body {
+    width: 100%;
     @apply bg-background text-foreground;
+    font-family: Geist, sans-serif;
   }
 }

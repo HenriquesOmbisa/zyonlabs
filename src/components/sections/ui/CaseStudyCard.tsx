@@ -2,7 +2,7 @@ import { CASE_STUDIES } from "@/data/static";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "../../ui/button";
 
 const CaseStudyCard = ({ caseStudy, select }: { caseStudy: typeof CASE_STUDIES[0], select: ()=> void }) =>{
   const handleClick = () => {
