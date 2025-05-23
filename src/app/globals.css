@@ -134,4 +134,7 @@
     @apply bg-background text-foreground;
     font-family: Geist, sans-serif;
   }
+  .modal-hight{
+    @apply max-h-[calc(100vh-4rem)] overflow-y-auto;
+  }
 }

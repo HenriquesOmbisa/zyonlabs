@@ -23,7 +23,7 @@ const ModalService = () => {
               className="bg-gray-800 rounded-xl max-w-xl w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-start mb-4">
+              <div className="modal-hight flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-bold">{selectedService.name}</h3>
                 <button 
                   onClick={() => setSelectedService(null)}

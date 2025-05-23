@@ -23,7 +23,7 @@ const ModalCaseStudy = () => {
               initial={{ scale: 0.9, y: 50 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 50 }}
-              className="bg-gray-800 rounded-xl max-w-2xl w-full overflow-hidden"
+              className="bg-gray-800 modal-hight rounded-xl max-w-2xl w-full overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="h-64 relative">
